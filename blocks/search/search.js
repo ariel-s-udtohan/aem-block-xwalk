@@ -83,6 +83,13 @@ export async function fetchData(source) {
   return json.data;
 }
 
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr);
+  if (Number.isNaN(d.getTime())) return '';
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
 function renderResult(result, searchTerms, titleTag) {
   const li = document.createElement('li');
   const a = document.createElement('a');
@@ -90,9 +97,20 @@ function renderResult(result, searchTerms, titleTag) {
   if (result.image) {
     const wrapper = document.createElement('div');
     wrapper.className = 'search-result-image';
-    const pic = createOptimizedPicture(result.image, '', false, [{ width: '375' }]);
+    const pic = createOptimizedPicture(result.image, result.imageAlt || '', false, [{ width: '375' }]);
     wrapper.append(pic);
     a.append(wrapper);
+  }
+  if (result.tags) {
+    const tagsContainer = document.createElement('div');
+    tagsContainer.className = 'search-result-tags';
+    result.tags.split(',').map((t) => t.trim()).filter(Boolean).forEach((tag) => {
+      const span = document.createElement('span');
+      span.className = 'search-result-tag';
+      span.textContent = tag;
+      tagsContainer.append(span);
+    });
+    a.append(tagsContainer);
   }
   if (result.title) {
     const title = document.createElement(titleTag);
@@ -106,9 +124,17 @@ function renderResult(result, searchTerms, titleTag) {
   }
   if (result.description) {
     const description = document.createElement('p');
+    description.className = 'search-result-description';
     description.textContent = result.description;
     highlightTextElements(searchTerms, [description]);
     a.append(description);
+  }
+  const dateStr = formatDate(result.date);
+  if (dateStr) {
+    const dateEl = document.createElement('p');
+    dateEl.className = 'search-result-date';
+    dateEl.textContent = dateStr;
+    a.append(dateEl);
   }
   li.append(a);
   return li;
