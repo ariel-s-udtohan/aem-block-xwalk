@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Colorado -->
+  <sitemap><loc>https://yourdomain.com/co/sitemap-en.xml</loc></sitemap>
+  <sitemap><loc>https://yourdomain.com/co/sitemap-fr.xml</loc></sitemap>
+  <!-- Michigan -->
+  <sitemap><loc>https://yourdomain.com/mi/sitemap-en.xml</loc></sitemap>
+  <sitemap><loc>https://yourdomain.com/mi/sitemap-fr.xml</loc></sitemap>
+  <!-- Minnesota -->
+  <sitemap><loc>https://yourdomain.com/mn/sitemap-en.xml</loc></sitemap>
+  <sitemap><loc>https://yourdomain.com/mn/sitemap-fr.xml</loc></sitemap>
+  <!-- New Mexico -->
+  <sitemap><loc>https://yourdomain.com/nm/sitemap-en.xml</loc></sitemap>
+  <sitemap><loc>https://yourdomain.com/nm/sitemap-fr.xml</loc></sitemap>
+  <!-- North Dakota -->
+  <sitemap><loc>https://yourdomain.com/nd/sitemap-en.xml</loc></sitemap>
+  <sitemap><loc>https://yourdomain.com/nd/sitemap-fr.xml</loc></sitemap>
+  <!-- South Dakota -->
+  <sitemap><loc>https://yourdomain.com/sd/sitemap-en.xml</loc></sitemap>
+  <sitemap><loc>https://yourdomain.com/sd/sitemap-fr.xml</loc></sitemap>
+  <!-- Texas -->
+  <sitemap><loc>https://yourdomain.com/tx/sitemap-en.xml</loc></sitemap>
+  <sitemap><loc>https://yourdomain.com/tx/sitemap-fr.xml</loc></sitemap>
+  <!-- Wisconsin -->
+  <sitemap><loc>https://yourdomain.com/wi/sitemap-en.xml</loc></sitemap>
+  <sitemap><loc>https://yourdomain.com/wi/sitemap-fr.xml</loc></sitemap>
+</sitemapindex>

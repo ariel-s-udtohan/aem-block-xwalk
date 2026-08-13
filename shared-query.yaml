@@ -1,0 +1,40 @@
+version: 1
+
+indices:
+  pages:
+    include:
+      - /**
+    exclude:
+      - /nav
+      - /footer
+      - /drafts/**
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      description:
+        select: head > meta[name="description"]
+        value: attribute(el, "content")
+      image:
+        select: head > meta[property="og:image"]
+        value: attribute(el, "content")
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
+      robots:
+        # REQUIRED — excludes noindex pages from sitemap
+        select: head > meta[name="robots"]
+        value: attribute(el, "content")
+      lang:
+        select: html
+        value: attribute(el, "lang")
+      stateCode:
+        select: head > meta[name="state-code"]
+        value: attribute(el, "content")
+      stateName:
+        select: head > meta[name="state-name"]
+        value: attribute(el, "content")
+      primaryLanguageUrl:
+        # For FR pages with non-matching URL suffixes
+        select: head > meta[name="primary-language-url"]
+        value: attribute(el, "content")
